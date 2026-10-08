@@ -1,0 +1,1 @@
+This is a research/ study-only repository for reverse engineering YoLo26n detection model. The exploration flow starts from 01_load_model. Feel free to reach me out should you have anything to discuss (cuz I am also a CS student). Constructive feedbacks and discussions are always welcomed! 
