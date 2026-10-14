@@ -1,7 +1,6 @@
 from ultralytics import YOLO
 
 model = YOLO("yolo26n.pt")
-
 pytorch_model = model.model
 
 
@@ -19,10 +18,8 @@ for index, layer in enumerate(pytorch_model.model):
     # print("\nLayer structure:")
     # print(layer)
 
-    # --------------------------------
-    # Parameters
-    # --------------------------------
 
+    # Parameters
     print("\nParameters:")
 
     total_parameters = 0
@@ -32,32 +29,28 @@ for index, layer in enumerate(pytorch_model.model):
         print(
             " ",
             name,
-            "| shape =", parameter.shape,
-            "| numel =", parameter.numel()
+            "| shape =", parameter.shape,  #for dimensions of the tensor 
+            "| numel =", parameter.numel()  #total numbers of elements in the tensor - multiplication of the shape elements 
         )
 
         total_parameters += parameter.numel()
 
     print("\nTotal parameters:", total_parameters)
 
-    # --------------------------------
-    # Convolution weights
-    # --------------------------------
 
+    # Convolution weights
     if hasattr(layer, "conv"):
 
         print("\nFirst 10 Convolution weight:")
 
-        print(layer.conv.weight.flatten()[:10])
+        print(layer.conv.weight.flatten()[:10]) #flattening converts multidimensional tensors into a one-dimensional tensor. +
 
         print("\nWeight shape:")
 
         print(layer.conv.weight.shape)
 
-    # --------------------------------
-    # BatchNorm values
-    # --------------------------------
 
+    # BatchNorm values
     if hasattr(layer, "bn"):
 
         print("\nFirst 10 BatchNorm weight:")

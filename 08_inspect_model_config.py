@@ -10,7 +10,7 @@ print("Task:", model.task)
 print("Model type:", type(model.model))
 
 print("\n========== MODEL ARGS ==========")
-for key, value in model.model.args.items():
+for key, value in model.model.args.items():     #stores model configuration arguments and return each dictionary entry as a key-value pair
     print(f"{key}: {value}")
 
 
@@ -26,7 +26,7 @@ print(model.names)
 
 # Model stride
 print("\n========== STRIDE ==========")
-print(model.model.stride)
+print(model.model.stride)                   #stride describes how much the spatial dimensions of a feature maos have been reduced relative to the input image 
 
 
 # Number of parameters
